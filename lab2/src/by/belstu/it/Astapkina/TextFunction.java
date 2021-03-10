@@ -31,6 +31,7 @@ public class TextFunction {
     }
 
     public void onCreate() {
+        System.out.println("Метод onCreate");
         for (int count = 0; count < 10; count++) {
             System.out.println("Counter " + count);
         }
