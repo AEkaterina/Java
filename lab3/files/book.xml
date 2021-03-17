@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book>
+    <Book>
+        <author>Victor Hugo</author>
+        <name>NOTRE-DAME DE PARIS</name>
+        <year>2005</year>
+        <cost>29</cost>
+        <num_of_pages>608</num_of_pages>
+    </Book>
+</book>
+

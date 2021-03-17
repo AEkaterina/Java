@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"by.belstu.it.Astapkina"},{"l":"by.belstu.it.Astapkina.basejava"}]

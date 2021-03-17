@@ -1,5 +1,7 @@
 package by.belstu.it.Astapkina.basejava;
 
+import java.util.Arrays;
+
 import static java.lang.Math.*;
 
 public class JavaTest {
@@ -85,18 +87,18 @@ public class JavaTest {
 
         char vch = 'z';
         vch += oChar;
-        System.out.println("+" + vch);
+        System.out.println("+: " + vch);
 
         int vint = ~oInt;
-        System.out.println("~" + vint);
+        System.out.println("~: " + vint);
 
         int vshort = oShort >> 2;
-        System.out.println(">>" + vshort);
+        System.out.println(">>: " + vshort);
         int vshort2 = oShort >>> 2;
-        System.out.println(">>>" + vshort2);
+        System.out.println(">>>: " + vshort2);
 
         long vlong = oLong&111;
-        System.out.println("&" + vlong);
+        System.out.println("&: " + vlong);
 
         System.out.println("Min long: " + oLong.MIN_VALUE + "\nMax long: " + oLong.MAX_VALUE);
         System.out.println("Min double: " + oDouble.MIN_VALUE + "\nMax double: " + oDouble.MAX_VALUE);
@@ -125,11 +127,11 @@ public class JavaTest {
         System.out.println(i);
 
         byte [] arr = s34.getBytes();
-        System.out.println("массив байтов: " + arr);
+        System.out.println("массив байтов: " + Arrays.toString(arr));
         String news34 = new String(arr);
         System.out.println("из байтов в строку: " + news34);
 
-        System.out.println("Логический тип: ");
+        System.out.println("Логический тип: ");         //строка в логический тип
         System.out.println("1 - " + Boolean.valueOf(s34));
         System.out.println("2 - " + Boolean.getBoolean(s34));
 
@@ -142,7 +144,7 @@ public class JavaTest {
         str2 = null;
         System.out.println("null: \n" + str1==str2);
         //System.out.println(str2.equals(str1));  exception
-        //System.out.println(str1.compareTo(str2));
+        //System.out.println(str1.compareTo(str2)); exception
 
         String mystr = new String("This is my code on java");
         System.out.println("split:");

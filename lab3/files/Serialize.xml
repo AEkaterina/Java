@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.10" class="java.beans.XMLDecoder">
+ <object class="by.Astapkina.bookshop.book.Book" id="Book0">
+  <void class="by.Astapkina.bookshop.edition.Edition" method="getField">
+   <string>author</string>
+   <void method="set">
+    <object idref="Book0"/>
+    <string>Victor Hugo</string>
+   </void>
+  </void>
+  <void class="by.Astapkina.bookshop.edition.Edition" method="getField">
+   <string>name</string>
+   <void method="set">
+    <object idref="Book0"/>
+    <string>NOTRE-DAME DE PARIS</string>
+   </void>
+  </void>
+  <void class="by.Astapkina.bookshop.edition.Edition" method="getField">
+   <string>year</string>
+   <void method="set">
+    <object idref="Book0"/>
+    <int>2005</int>
+   </void>
+  </void>
+  <void class="by.Astapkina.bookshop.edition.Edition" method="getField">
+   <string>num_of_pages</string>
+   <void method="set">
+    <object idref="Book0"/>
+    <int>608</int>
+   </void>
+  </void>
+  <void class="by.Astapkina.bookshop.edition.Edition" method="getField">
+   <string>cost</string>
+   <void method="set">
+    <object idref="Book0"/>
+    <int>29</int>
+   </void>
+  </void>
+ </object>
+</java>
