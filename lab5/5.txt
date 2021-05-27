@@ -1,0 +1,72 @@
+package university;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class University implements Runnable {                       //инт имеет только 1 метод run
+    private static Boolean firstDoor;
+    private static Boolean secondDoor;
+    private Student student;
+
+    public University(Boolean door1, Boolean door2, Student student) {
+        firstDoor = door1;
+        secondDoor = door2;
+        this.student = student;
+    }
+
+    private void ToOccupyDoor(Boolean door) throws InterruptedException{
+        door = false;
+        System.out.println(student.getName() + " ждёт дверь ");
+        Thread.sleep(100);              //остановка
+        door = true;
+        throw new InterruptedException();
+    }
+
+    public void run() {
+        System.out.println(student.getName() + " начал(a) " + (student.getInOut() ? " вход " : " выход "));
+        synchronized (this){                                //синхронизируем потоки, чтобы ограничить доступ и позволить 1 потоку выполнить действие. Блокирует доступ, пока раотает жругой поток
+            try {
+                if(!firstDoor){
+                    while (!firstDoor)
+                        if(!secondDoor)
+                            Thread.sleep(100);
+                        else
+                        {
+                            System.out.println(student.getName() + " поменял(а) дверь ");
+                            ToOccupyDoor(secondDoor);
+                        }
+                    ToOccupyDoor(firstDoor);
+                }
+                else
+                    ToOccupyDoor(firstDoor);
+            }catch (InterruptedException e) {
+                System.out.println(student.getName() + " возобновил(а) " + (student.getInOut() ? " вход " : " выход "));
+            }
+        }
+        System.out.println(student.getName() + " закончил(a) " + (student.getInOut() ? " вход " : " выход "));
+    }
+
+    public static void Task(List<Student> students){
+        System.out.println();
+        System.out.println();
+
+        Boolean door1 = true,
+                door2 = true;
+        List<Thread> threads = new ArrayList<Thread>();
+
+        for(Student student : students){
+            Thread thread = new Thread(new University(door1, door2, student));
+            thread.setName(student.getName());
+            threads.add(thread);
+            thread.start();                     //запуск потока, вызов run()
+        }
+
+        try {
+            for (Thread thread : threads){
+                thread.join();                          //ожидание завершения потока
+            }
+        }catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
