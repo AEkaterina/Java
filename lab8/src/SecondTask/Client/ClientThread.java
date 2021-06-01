@@ -79,5 +79,14 @@ public class ClientThread {
         }
     }
 
+    private void downService() {
+        try {
+            if(!socket.isClosed()) {
+                socket.close();
+                reader.close();
+                writer.close();
+            }
+        } catch (IOException ignored) { }
+    }
 
 }
