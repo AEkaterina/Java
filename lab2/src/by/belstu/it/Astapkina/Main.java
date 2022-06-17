@@ -35,6 +35,18 @@ public class Main {
             }
         };
 
+        obj.onCreate();
+        WrapperString wrapper1 = new WrapperString("fdss");
+        WrapperString wrapper2 = new WrapperString("anonim class") {
+            @Override
+            public void replace (char oldchar, char newchar) {
+                System.out.println("method replace in anonim class");
+            }
+            public void delete (char newchar) {
+                System.out.println("delete something");
+            }
+        };
+
         System.out.println("heey");
     }
 

@@ -38,4 +38,25 @@ public class TextFunction {
     }
 
 
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public String getValue() {
+        PrintInf();
+        return "Hello from First project";
+    }
+
+    private void PrintInf() {
+        System.out.println("Some information");
+        int a = 3, b = 2;
+        int c;
+        c = a + b;
+        System.out.println("с = " +  c);
+    }
+
 }

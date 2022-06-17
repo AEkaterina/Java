@@ -17,6 +17,10 @@ public class WrapperString {
         this.ex = ex;
     }
 
+    public void replace (char oldchar, char newchar) {
+        System.out.println("New method replace");
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
